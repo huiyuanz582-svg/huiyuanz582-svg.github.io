@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhD Homepage · 3D Point Cloud Denoising</title>
-  <!-- clean, modern, academic style -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <title>Zhang Huiyuan · PhD candidate</title>
   <style>
+    /* 极简重置 + 居中 */
     * {
       margin: 0;
       padding: 0;
@@ -16,391 +13,111 @@
     }
 
     body {
-      background: #f6f9fc;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: #f5f7fa;
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       padding: 2rem 1.5rem;
-      line-height: 1.5;
+      line-height: 1.6;
       color: #1e293b;
     }
 
-    .profile-card {
-      max-width: 820px;
+    .card {
+      max-width: 700px;
       width: 100%;
       background: #ffffff;
-      border-radius: 32px;
-      box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.15), 0 8px 24px -8px rgba(0, 0, 0, 0.05);
-      padding: 2.8rem 3rem;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 28px;
+      padding: 3rem 2.8rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2f6;
+      transition: all 0.2s;
     }
 
-    @media (max-width: 600px) {
-      .profile-card {
-        padding: 2rem 1.5rem;
-      }
-    }
-
-    .header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #eef4f9;
-      padding-bottom: 1.25rem;
-    }
-
-    .name-title h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #0b2b3d;
-      margin-bottom: 0.2rem;
-    }
-
-    .badge {
-      background: #e2edf7;
-      color: #1a4b6d;
-      font-weight: 500;
-      font-size: 0.85rem;
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      display: inline-block;
-      margin-top: 0.25rem;
-      border: 1px solid rgba(30, 80, 120, 0.08);
-      letter-spacing: 0.3px;
-    }
-
-    .affiliation {
-      margin-top: 0.4rem;
-      font-size: 1rem;
-      color: #2c4b63;
-      background: #f0f6fd;
-      padding: 0.2rem 1rem;
-      border-radius: 30px;
-      display: inline-block;
-      font-weight: 500;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 2.2rem;
-      margin: 1.8rem 0 1rem;
-    }
-
-    @media (max-width: 680px) {
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-      }
-    }
-
-    .left-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-    }
-
-    .section {
-      background: #f9fcff;
-      border-radius: 24px;
-      padding: 1.5rem 1.6rem;
-      border: 1px solid #e9f0f7;
-      transition: background 0.2s;
-    }
-
-    .section-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #537b99;
-      font-weight: 600;
-      margin-bottom: 0.9rem;
-      border-bottom: 1px dashed #d7e2ed;
-      padding-bottom: 0.6rem;
-    }
-
-    .research-tag {
-      display: inline-block;
-      background: #d7e8fa;
-      color: #13415a;
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 0.3rem 1.2rem;
-      border-radius: 40px;
-      margin-top: 0.2rem;
-      border: 1px solid rgba(20, 70, 110, 0.08);
-      letter-spacing: 0.2px;
-    }
-
-    .research-desc {
-      margin-top: 0.8rem;
-      font-size: 0.98rem;
-      color: #1f4058;
-      background: #eef6fe;
-      padding: 0.6rem 1rem;
-      border-radius: 20px;
-      border-left: 4px solid #3a7ca5;
-    }
-
-    .edu-item {
-      margin-bottom: 1.2rem;
-    }
-    .edu-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .edu-degree {
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: #10334a;
-    }
-
-    .edu-school {
-      display: block;
-      font-weight: 500;
-      color: #2f5a78;
-      margin: 0.2rem 0 0.15rem;
-    }
-
-    .edu-meta {
-      font-size: 0.9rem;
-      color: #4b6f89;
-      background: #e2edf7;
-      display: inline-block;
-      padding: 0.1rem 0.9rem;
-      border-radius: 30px;
-      margin-top: 0.2rem;
-    }
-
-    .divider-light {
-      height: 1px;
-      background: linear-gradient(90deg, #d7e2ed, transparent);
-      margin: 0.6rem 0 1rem;
-    }
-
-    .right-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-    }
-
-    .bio-text {
-      font-size: 1rem;
-      color: #1f3d54;
-      line-height: 1.6;
-      background: #fafdff;
-      padding: 0.6rem 0.2rem;
-    }
-    .bio-text strong {
-      color: #15425f;
-      font-weight: 600;
-    }
-
-    .interest-list {
-      list-style: none;
-      margin-top: 0.5rem;
-    }
-    .interest-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 0.7rem;
-      font-size: 0.98rem;
-      background: #f1f8fe;
-      padding: 0.4rem 1rem 0.4rem 0.8rem;
-      border-radius: 40px;
-      border: 1px solid #e2edf6;
-    }
-    .interest-list li::before {
-      content: "▹";
-      color: #2f78a7;
-      font-weight: 600;
+    /* 单段介绍：干净、易读 */
+    .bio {
       font-size: 1.2rem;
-      line-height: 1;
+      font-weight: 400;
+      color: #1f3a4e;
+      letter-spacing: -0.01em;
     }
 
-    .chip-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 0.6rem;
-      margin-top: 0.5rem;
+    .bio strong {
+      color: #0b2b3d;
+      font-weight: 600;
     }
-    .chip {
-      background: #ecf3fa;
-      color: #18445f;
-      padding: 0.2rem 1rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
+
+    .bio .highlight {
+      display: inline-block;
+      background: #e6f0fa;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
       font-weight: 500;
-      border: 1px solid #d2e2f0;
+      color: #13415a;
     }
 
-    .footer-note {
+    /* 小点缀：GitHub 链接 + 邮箱 */
+    .footer-links {
       margin-top: 2rem;
       padding-top: 1.2rem;
-      border-top: 1px solid #e3ecf5;
+      border-top: 1px solid #eef2f6;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
-      color: #537b99;
-    }
-    .footer-note span {
-      background: #eef5fc;
-      padding: 0.2rem 1rem;
-      border-radius: 50px;
-      font-weight: 450;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #4b6f89;
     }
 
-    .github-icon {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+    .footer-links a {
       color: #1a4b6d;
-      font-weight: 500;
       text-decoration: none;
-      border-bottom: 1px dotted #acc4d9;
+      font-weight: 500;
+      border-bottom: 1px dotted #c7d8e8;
     }
-    .github-icon:hover {
+
+    .footer-links a:hover {
       color: #0a2b40;
       border-bottom: 1px solid #1a4b6d;
     }
 
-    .dot-accent {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: #3a8ab5;
-      border-radius: 10px;
-      margin-right: 6px;
+    .footer-links span {
+      background: #f0f5fc;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
     }
-    .inline-badge {
-      background: #dce9f5;
-      border-radius: 30px;
-      padding: 0.1rem 0.8rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #13415a;
-      margin-left: 0.4rem;
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 2rem 1.5rem;
+      }
+      .bio {
+        font-size: 1.05rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="profile-card">
-    <!-- header -->
-    <div class="header">
-      <div class="name-title">
-        <h1>Yixuan Zhang</h1>
-        <div class="badge">🔬 PhD Candidate · 3D Point Cloud Denoising</div>
-      </div>
-      <div class="affiliation">
-        <span class="dot-accent"></span> Beijing Institute of Technology · Automation
-      </div>
-    </div>
+  <div class="card">
+    <!-- 核心：一段简洁的介绍，姓名已更新为 Zhang Huiyuan -->
+    <p class="bio">
+      I am <strong>Zhang Huiyuan</strong>, a <strong>Ph.D. candidate</strong> at the 
+      <strong>Beijing Institute of Technology</strong> (Automation School), 
+      specializing in <span class="highlight">3D point cloud denoising</span>. 
+      I received my M.S. degree from 
+      <strong>Northeastern University</strong> (Automation School).
+    </p>
 
-    <!-- main two-column layout -->
-    <div class="content-grid">
-      <!-- left: research + education -->
-      <div class="left-panel">
-        <!-- research -->
-        <div class="section">
-          <div class="section-title">📌 Research Focus</div>
-          <div class="research-tag">3D Point Cloud Denoising</div>
-          <div class="research-desc">
-            <span style="font-weight:500;">Filtering · Noise Suppression · Feature Preservation</span><br>
-            <span style="font-size:0.9rem; opacity:0.9;">Deep learning for outlier removal and structure enhancement</span>
-          </div>
-          <div style="margin-top: 0.8rem;">
-            <span class="chip">Sparse point clouds</span>
-            <span class="chip">Gaussian noise</span>
-            <span class="chip">Geometric restoration</span>
-          </div>
-        </div>
-
-        <!-- education -->
-        <div class="section">
-          <div class="section-title">🎓 Education</div>
-          <div class="edu-item">
-            <div class="edu-degree">Ph.D. in progress</div>
-            <span class="edu-school">Beijing Institute of Technology · Automation</span>
-            <span class="edu-meta">2023 – present</span>
-          </div>
-          <div class="divider-light"></div>
-          <div class="edu-item">
-            <div class="edu-degree">M.S.</div>
-            <span class="edu-school">Northeastern University · Automation</span>
-            <span class="edu-meta">2020 – 2023</span>
-            <div style="font-size:0.9rem; color:#386582; margin-top:0.2rem;">Research: signal processing & point cloud preprocessing</div>
-          </div>
-          <div style="margin-top: 0.8rem; font-size:0.9rem; color:#1f4a68; background:#e6f0fa; padding:0.2rem 1rem; border-radius:30px; display:inline-block;">
-            ⚙️ Automation · Control Science & Engineering
-          </div>
-        </div>
-      </div>
-
-      <!-- right: about + interests + skills -->
-      <div class="right-panel">
-        <div class="section" style="background: #fafdff;">
-          <div class="section-title">🧑‍💻 About Me</div>
-          <div class="bio-text">
-            <p style="margin-bottom: 0.6rem;">
-              <strong>Ph.D. candidate</strong> at Beijing Institute of Technology, Automation School. 
-              My research focuses on <strong>3D point cloud denoising</strong> and high‑quality point cloud reconstruction. 
-              I received my M.S. from <strong>Northeastern University</strong> (Automation), where I built a strong foundation in point cloud preprocessing and noise modeling.
-            </p>
-            <p style="color: #2a5370; background:#e9f2fc; padding:0.4rem 1rem; border-radius:30px; display:inline-block; font-size:0.9rem;">
-              🧩 Exploring denoising‑perception integrated frameworks
-            </p>
-          </div>
-        </div>
-
-        <!-- research interests / keywords -->
-        <div class="section">
-          <div class="section-title">🔍 Research Interests</div>
-          <ul class="interest-list">
-            <li>3D point cloud denoising & enhancement</li>
-            <li>Deep learning for point cloud processing</li>
-            <li>Outlier detection & geometric feature preservation</li>
-            <li>Multi‑sensor fusion point cloud preprocessing</li>
-          </ul>
-          <div class="chip-group" style="margin-top: 0.8rem;">
-            <span class="chip">Python</span>
-            <span class="chip">PyTorch</span>
-            <span class="chip">Open3D</span>
-            <span class="chip">PCL</span>
-            <span class="chip">MATLAB</span>
-          </div>
-        </div>
-
-        <!-- current status / one-liner -->
-        <div style="background: #e6f1fa; border-radius: 40px; padding: 0.6rem 1.2rem; border: 1px solid #c7ddec; font-size:0.95rem; color:#10344e;">
-          <span style="font-weight:500;">📖 Current work:</span> Graph neural networks for 3D point cloud denoising
-          <span style="display:inline-block; background:#c2ddf5; border-radius:30px; padding:0 0.8rem; margin-left:0.4rem; font-size:0.75rem;">active</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- footer -->
-    <div class="footer-note">
-      <span>📍 Beijing · Beijing Institute of Technology, Automation</span>
-      <div style="display: flex; gap: 0.8rem; align-items: center;">
-        <span style="background:transparent; padding:0;">📧 yixuan.zhang@bit.edu.cn</span>
-        <a href="#" class="github-icon" style="background: #ecf3fa; padding:0.2rem 1rem; border-radius:50px; text-decoration:none;">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="display:inline-block; vertical-align:middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          <span style="margin-left: 3px;">GitHub</span>
-        </a>
-      </div>
-    </div>
-    <div style="margin-top: 0.8rem; font-size: 0.7rem; color: #7d9bb5; text-align: right; border-top: 1px dashed #d7e2ed; padding-top: 0.6rem; opacity:0.7;">
-      3D Point Cloud Denoising · BIT Automation · Homepage
+    <!-- 极简脚注：联系方式 + GitHub -->
+    <div class="footer-links">
+      <span>📧 huiyuan.zhang@bit.edu.cn</span>
+      <a href="#" target="_blank">GitHub</a>
     </div>
   </div>
 </body>
